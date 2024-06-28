@@ -1,3 +1,8 @@
+# Mostrare una lista di film inizialmente al click della lista mostrare la descrizione del film
+# Argomenti trattati Interfacce, bootstrap, componenti padre e componente figlio 
+
+
+
 # EsercitazioneFilm
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
