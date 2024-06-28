@@ -1,0 +1,16 @@
+<h2>Film al cinema:</h2>
+<section *ngIf="films.length; else nessunFilm" class="row">
+    <section class="col-3">
+        <ul class="nav flex-column nav-pills">
+            <li *ngFor="let film of films; let i = index" (click)="setSelectedFilm(film)" class="nav-item">
+                <a class="nav-link {{ selectedFilm === film ? 'active' : ''}}" aria-current="page" href="#">{{ (i+1) + ". " + film.titolo }}</a>
+            </li>
+        </ul>
+    </section>
+    <app-film-dettaglio [film]="selectedFilm" class="col-5"></app-film-dettaglio>
+</section>
+<ng-template #nessunFilm>
+    <section class="col-2">
+        <p>Non ci sono film in programma.</p>
+    </section>
+</ng-template>

@@ -1,0 +1,22 @@
+<section *ngIf="film" class="card">
+    <div class="card-header">
+        {{ film.titolo }}
+    </div>
+    <img [src]="'assets/' + film.immagineLocandina" [alt]="film.titolo" class="card-img-top" />
+    <div class="card-body" >
+        <h3 class="card-title">{{ film.titolo }}</h3>
+        <p>Anno: {{ film.annoDiUscita }}</p>
+        <p>Regista: {{ film.regista }}</p>
+        <p>Attori principali:</p>
+        <ul>
+            <li *ngFor="let attorePrincipale of film.attoriPrincipali; let i = index">{{ (i+1) + ". " + attorePrincipale }}</li>
+        </ul>
+        <p>Categoria: {{ film.categoria }}</p>
+        <p class="blackStars">
+            Valutazione: {{ film.valutazione + "/5"}}
+            <img *ngFor="let i of valutazioni" src="assets/star.webp" width="30px" height="30px" />
+            <img *ngFor="let i of valutazioniNo" src="assets/black_star.webp" width="30px" height="30px" />
+        </p>
+        <a href="#" (click)="bookSeat()" class="btn btn-primary">Prenota!</a>
+    </div>
+</section>
